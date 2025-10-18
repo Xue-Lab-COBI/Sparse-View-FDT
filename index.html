@@ -305,15 +305,14 @@
         <h2 class="title is-3">Overview</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <img src="./static/images/Figure1.jpg" alt="Matting Example" style="width: 100%; height: auto;">
+            <img src="./static/images/overview.jpg" alt="Matting Example" style="width: 100%; height: auto;">
             <p class="caption">
-              <strong>C-FOCUS enables two-photon imaging of YFP-labeled pyramidal neurons up to 940 $\mu m$ below the dura in the somatosensory cortex using intensity-based scattering correction with compressive sensing.</strong>
+              <strong>Overview of our method for 3D reconstruction.</strong>
             </p>
             <p>
-              <span class="caption">a</span>, Optical schematic of the C-FOCUS system, based on the 2P-FOCUS framework. 
-              <span class="caption">b</span>, an uncorrected image is first acquired and segmented into subregions, each containing a local intensity peak that serves as a correction target.
-              <span class="caption">c</span>, Correction masks for the subregions are measured and calculated sequentially using compressive sensing.
-              <span class="caption">d</span>, In vivo imaging of YFP-labeled pyramidal neurons in the somatosensory cortex of a Thy1-YFP-H mouse through a cranial window using 1035 nm excitation, with and without scattering correction. With C-FOCUS, fluorescence intensity is enhanced fivefold, enabling imaging to a depth of 800 μm (8.5 EAL).
+              <span class="caption">a</span>, Neural volumetric prior (NVP): Predefined 3D grids are reshaped and processed by MLPs to generate the predicted 3D RI volume $\hat{n}$.
+              <span class="caption">b</span>, Multi-slice rendering equation: The multi-slice model calculates light propagation through the volumetric sample from the fluorescence sources (white spots at the bottom) by accounting for light diffraction at each slice. Each illumination configuration of the fluorescence sources (e.g., $F_1, F_i, F_n$) interacts with the volume to produce a corresponding set of rendered images ($\hat{I}_1, \hat{I}_i, \hat{I}_n$). The illumination configurations are jointly optimized with the RI volume.
+              <span class="caption">c</span>, Loss functions: The predicted images $\hat{I}_{\text{pred}}$ are aligned with ground truth images $I_{\text{GT}}$ and masked based on light coherence, resulting in $\hat{I}_{\text{mask}}$ and $I_{\text{mask}}$. Loss functions, including $L1$, $L2$, and SSIM, are calculated over the masked regions of $\hat{I}_{\text{pred}}$ and $I_{\text{GT}}$, and a total variation (TV) regularizer $R(\hat{n})$ is applied. 
             </p>
 
           </div>
