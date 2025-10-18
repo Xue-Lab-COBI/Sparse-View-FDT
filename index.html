@@ -343,7 +343,7 @@
         structure and z-section ability. 
       </p> -->
       <div class="related-work">
-        <h3 class="title is-4">Fluorescent Beads through a Mouse Skull</h3>
+        <!-- <h3 class="title is-4">Fluorescent Beads through a Mouse Skull</h3>
         <div class="work-item">
           <a href="">
             <img src="./static/images/Figure2.jpg" alt="Progressive Encoding for Neural Optimization">
@@ -356,13 +356,13 @@
             <span class="caption">b</span>, Multi-slice rendering equation: The multi-slice model calculates light propagation through the volumetric sample from the fluorescence sources (white spots at the bottom) by accounting for light diffraction at each slice. Each illumination configuration of the fluorescence sources (e.g., $F_1, F_i, F_n$) interacts with the volume to produce a corresponding set of rendered images ($\hat{I}_1, \hat{I}_i, \hat{I}_n$). The illumination configurations are jointly optimized with the RI volume.
             <span class="caption">c</span>, Loss functions: The predicted images $\hat{I}_{\text{pred}}$ are aligned with ground truth images $I_{\text{GT}}$ and masked based on light coherence, resulting in $\hat{I}_{\text{mask}}$ and $I_{\text{mask}}$. Loss functions, including $L1$, $L2$, and SSIM, are calculated over the masked regions of $\hat{I}_{\text{pred}}$ and $I_{\text{GT}}$, and a total variation (TV) regularizer $R(\hat{n})$ is applied. 
           </p>
-        </div>
+        </div> -->
         
         
         <div class="work-item">
-          <h3 class="title is-4">Neurons</h3>
+          <h3 class="title is-4">Snthetic Cells d</h3>
           <a href="">
-            <img src="./static/images/Figure3.jpg" alt="D-NeRF">
+            <img src="./static/images/beads.jpg" alt="D-NeRF">
           </a>
           <p class="caption">
             <strong>NVP reconstructs the 3D RI of the synthetic cell dataset with micron-scale resolution and excellent optical sectioning.</strong>
@@ -382,40 +382,47 @@
         </p>
           
         <div class="work-item">
-          <h3 class="title is-4">Blood Vessels </h3>
+          <h3 class="title is-4">Snthetic Cells Comparison </h3>
           <a href="">
-            <img src="./static/images/Figure4.jpg" alt="Blood Vessels">
+            <img src="./static/images/beads2.jpg" alt="Blood Vessels">
           </a>
           <p class="caption">
-            <strong>Adult wild-type mice were imaged through a cranial window under anesthesia following intravenous injection of FITC.</strong>
+            <strong>NVP achieves more accurate reconstruction compared to the explicit and triplane methods.</strong>
           </p>
           <p>
-            <span class="caption">a</span>, Volume rendering of FITC-labeled blood vessels after scattering correction. The left column shows maximum intensity projection (MIP) images from 0 to 600 μm depth without correction. The right column shows the volume view of the $252 \times 252 \times 910 \mu m^3$ image stack. 
-            <span class="caption">b-d</span>, Comparison between images without correction (left column), with correction (middle column), and zoomed-in views (right column, scale bar: 20 μm) at \textbf{b} 700 μm, \textbf{c} 820 μm, and \textbf{d} 910 μm depths. These images were acquired from different mice under the same labeling protocol. In the zoomed-in views, the intensity of the uncorrected images is digitally magnified (scaling factor indicated in each panel) for display purposes. 
-            <span class="caption">e-g</span>, Fluorescence intensity profiles without and with correction along the dashed lines in the zoomed-in views. 
-            <span class="caption">h-j</span>, Subregions and representative correction masks from the boxed regions in \textbf{b-d} (highlighted by colored frames).
+            The top row shows the RI maps produced by each method, with the ground-truth RI map included for reference. The bottom row displays the corresponding error maps, highlighting the reconstruction errors in each method. NVP demonstrates superior performance, producing smoother reconstructions and lower errors that closely match the ground truth. 
           /p>
         </div>
 
         <p>
         </p>
         <div class="work-item">
-          <h3 class="title is-4">Neurons through Intact Skull</h3>
+          <h3 class="title is-4">Synthetic Tissue</h3>
+          <a href="">
+            <img src="./static/images/neuron.jpg" alt="NR-NeRF">
+          </a>
+          <p class="caption">
+            <strong>NVP reconstructs the RI of varying morphological structures in the synthetic tissue dataset and outperforms the explicit and triplane methods.</strong>
+          </p>
+          <p>
+            The synthetic tissue contains both continuous structures (blood vessels, red) and sparse structures (neurons, blue). Left: the 3D view of the reconstructed RI. Right: a representative $Z$-slice and zoomed-in views of the reconstructed RI. Scale bars denote 50 um.
+  
+          /p>
+        </div>  
+
+        <div class="work-item">
+          <h3 class="title is-4">Living MDCK Cells</h3>
           <a href="">
             <img src="./static/images/Figure5.jpg" alt="NR-NeRF">
           </a>
           <p class="caption">
-            <strong>C-FOCUS visualizes the apical dendrites of YFP-labeled pyramidal neurons through 110 μm-thick intact skull in vivo.</strong>
+            <strong>NVP reconstructs the 3D RI of living MDCK cells with superior accuracy and fewer artifacts compared to the results from the explicit and triplane methods.</strong>
           </p>
           <p>
-            <span class="caption">a</span>, The volume view of the skull (second-harmonic signal (SHG)) and YFP-labeled dendrites without and with correction. The left column shows the representative SHG image at 50 μm depth (1.1 EAL) and YFP images at 170 μm (3.2 EAL) and 220 μm (3.4 EAL) depth without correction. 
-            <span class="caption">b-d</span>, Comparison between the images without correct (left column) and the images with correction (middle column), and zoomed-in views (right column, scale bar, 10 μm) at \textbf{b} 430 μm (3.9 EAL), \textbf{c} 490 μm (4.2 EAL), and \textbf{d} 560 μm (4.5 EAL) depth. In the zoomed-in views, the intensity of images without correction are magnified (as labeled in the images) for display purpose. 
-            <span class="caption">e-g</span>, Fluorescent intensity along the dashed line in the zoomed-in views. 
-            <span class="caption">h-j</span>, Subregions and correction masks on the same $z$-plane as \textbf{b-d}. 
-            <span class="caption">k</span>, Schematic of in vivo transcranial imaging of YFP neurons through an intact skull. The coverglass is to protect the exposed skull after survive surgery.
-  
+            RI maps (top row), predicted images (bottom row, left), and error maps (bottom row, right) are shown for the explicit method, the triplane method, and NVP. The zoomed-in views (purple and green boxes) of the RI maps are shown in the top row, right. Scale bars denote 20 um.
           /p>
-        </div>        
+        </div>  
+        
       </div>
       
       </div>
