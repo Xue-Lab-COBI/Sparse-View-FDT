@@ -318,7 +318,26 @@
           </div>
         </div>
       </div>
-      
+            <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Representation Methods</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <img src="./static/images/nvp.jpg" alt="Matting Example" style="width: 100%; height: auto;">
+            <p class="caption">
+              <strong>Illustrations of different neural representation methods.</strong>
+            </p>
+            <p>
+              <span class="caption">a</span>, Explicit neural representation: A non-parametric method in which the refractive index (RI) distribution $\hat{n}$ is directly reconstructed by the projection function $W_{\text{enr}}(x, y, z)$, which provide a one-to-one mapping from spatial coordinates to RI values \cite{Xue:22, FDT}.
+              <span class="caption">b</span>,Implicit neural representation: Instead of directly reconstructing $\hat{n}$, this method optimizes the parameters of a  multi-layer perceptron (MLP) $F_{\text{inr}}$, which is then used to predict $\hat{n}$
+              <span class="caption">c</span>, Triplane: A hybrid method combining non-parametric and parametric components by solving both the triplane features ${W_{xy}, W_{xz}, W_{yz}}$ and the neural model $F_{\text{tri}}$ to reconstruct $\hat{n}$ 
+              <span class="caption">d</span>, NVP: Our proposed hybrid approach reconstructs $\hat{n}$ by integrating an uncompressed volumetric prior ${W_{xyz}}$ into the neural model $F_{\text{nvp}}$.
+
+          </div>
+        </div>
+      </div>
+
+    
       <style>
         .column.content img {
           width: 100%;
